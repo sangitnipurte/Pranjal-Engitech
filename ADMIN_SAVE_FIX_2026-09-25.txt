@@ -1,0 +1,14 @@
+# ADMIN SAVE FIX — 2026-09-25
+
+Applied to this project:
+- Fixed the central SQLite/Mongo save routine so the hidden form `id` field is never inserted as a database primary key.
+- This fixes NEW Product, Category, Client and Event creation when the form is in "new" mode.
+- Admin frontend now removes the hidden `id` field from FormData before POST/PUT requests.
+- Added explicit API CORS methods/headers for Vercel -> Render requests.
+- Improved admin network error text so backend connection problems identify the configured API URL.
+- Existing product catalogue and website design are preserved.
+
+Local:
+Backend: python app.py -> http://127.0.0.1:5000
+Frontend: cd frontend && python -m http.server 5500 -> http://127.0.0.1:5500
+Admin: http://127.0.0.1:5500/admin/

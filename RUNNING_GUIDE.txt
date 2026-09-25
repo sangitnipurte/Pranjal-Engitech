@@ -1,0 +1,39 @@
+PRANJAL ENGITECH - RUN GUIDE
+
+1) Open the project folder in VS Code.
+2) Backend:
+   cd backend   (if using the backend-folder version)
+   OR for this package:
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+   copy .env.example .env
+   python app.py
+3) If using the included frontend separately:
+   cd frontend
+   python -m http.server 5500
+   Open http://127.0.0.1:5500/
+4) Admin is direct only:
+   http://127.0.0.1:5500/admin/
+   It is intentionally NOT linked from the public navigation.
+
+IMPORTANT - VERCEL + RENDER
+Edit frontend/config.js after Render is deployed:
+window.PRANJAL_CONFIG={API_BASE:'https://YOUR-RENDER-SERVICE.onrender.com'};
+Then deploy frontend/ to Vercel.
+
+IMPORTANT - IMAGES
+Cloudinary image URLs (https://...) work directly.
+Local backend uploads are automatically converted to the Render /static/uploads/ path by frontend/app.js.
+For production, use Cloudinary so uploaded images remain persistent after Render redeploys.
+
+HOME PAGE
+The home page now renders the complete 53-product catalogue. If the API is temporarily unavailable, the names/categories still appear using the built-in catalogue fallback; actual uploaded images load when the API/Cloudinary is available.
+
+NEW CMS FEATURES
+- Blue category bar below the main header. Categories are managed from Admin > Header Categories.
+- Admin can add, edit, rename, hide, or delete header categories. Renaming updates product category values.
+- Events & Exhibitions is a public page and header item. Admin > Events & Exhibitions supports title, date, location, description and image upload.
+- Product manager now has separate Add New Product and Discard Changes actions.
+- Homepage category-card section has been removed; category names are shown in the header bar.
+- Client marquee was rebuilt using a duplicated track and requestAnimationFrame for smoother continuous scrolling.

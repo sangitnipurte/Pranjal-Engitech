@@ -1,0 +1,36 @@
+PRANJAL ENGITECH - UPDATE NOTES
+
+1. Header categories
+   - Removed the homepage category-card section.
+   - Added a blue category navigation strip below the main header.
+   - Category names are loaded from the backend so Admin changes are reflected on the public website.
+
+2. Header Categories CMS
+   - Admin > Header Categories.
+   - Add New Category, Save Category and Discard Changes are separate actions.
+   - Edit and Delete are available for each category.
+   - Renaming a category updates the category field on products assigned to the old name.
+
+3. Events & Exhibitions
+   - Added public Events & Exhibitions page.
+   - Added header navigation item.
+   - Added Events & Exhibitions admin tab.
+   - Admin can add/edit/delete events and upload event images.
+   - Event images use Cloudinary automatically when Cloudinary credentials are configured.
+
+4. Products
+   - Existing 53-product catalogue is retained.
+   - Homepage renders the full catalogue with product names and images/placeholders.
+   - Product manager has separate Add New Product and Discard Changes actions.
+
+5. Clients
+   - Client horizontal scrolling was rebuilt for smoother continuous movement.
+   - Mouse/touch pause is supported and arrow buttons remain available.
+
+6. Deployment
+   - Vercel root directory: frontend
+   - Render root directory: project root
+   - Render start command: gunicorn app:app
+   - MongoDB Atlas stores persistent content.
+   - Cloudinary stores persistent images.
+   - Add API_ADMIN_TOKEN to local .env and Render environment variables.
